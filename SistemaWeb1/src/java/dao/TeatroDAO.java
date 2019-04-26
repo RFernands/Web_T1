@@ -125,10 +125,10 @@ public class TeatroDAO {
         }
         return teatro;
     }
-    
-        public List<Teatro> getByCity(String cidade) {
+
+    public List<Teatro> getByCity(String cidade) {
         List<Teatro> listaTeatros = new ArrayList<>();
-        String sql = "SELECT id, email, senha, cnpj, nome, cidade FROM Teatro,Usuario where id = id_usuario and cidade = ?";
+        String sql = "SELECT * FROM Teatro WHERE cidade = ?";
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);

@@ -4,8 +4,9 @@ public class Promocao {
 
     private int ID;
     private String URLdoSite;
+    private String CNPJdoTeatro;
     private String nomePeca;
-    private String precoPeca;
+    private float precoPeca;
     private String data;
     private String horario;
 
@@ -13,17 +14,19 @@ public class Promocao {
         this.ID = ID;
     }
 
-    public Promocao(int ID, String URLdoSite, String nomePeca, String precoPeca, String data, String horario) {
+    public Promocao(int ID, String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String data, String horario) {
         this.ID = ID;
         this.URLdoSite = URLdoSite;
+        this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
         this.data = data;
         this.horario = horario;
     }
 
-    public Promocao(String URLdoSite, String nomePeca, String precoPeca, String data, String horario) {
+    public Promocao(String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String data, String horario) {
         this.URLdoSite = URLdoSite;
+        this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
         this.data = data;
@@ -46,6 +49,14 @@ public class Promocao {
         this.URLdoSite = URLdoSite;
     }
     
+    public String getCNPJdoTeatro() {
+        return CNPJdoTeatro;
+    }
+    
+    public void setCNPJdoTeatro(String CNPJdoTeatro) {
+        this.CNPJdoTeatro = CNPJdoTeatro;
+    }
+    
     public String getNomePeca() {
         return nomePeca;
     }
@@ -54,10 +65,18 @@ public class Promocao {
         this.nomePeca = nomePeca;
     }
 
-    public String getData() {
-        return data;
+    public float getPrecoPeca() {
+        return precoPeca;
     }
 
+    public void setPrecoPeca(float precoPeca) {
+        this.precoPeca = precoPeca;
+    }
+    
+    public String getData(){
+        return data;
+    }
+    
     public void setData(String data) {
         this.data = data;
     }
