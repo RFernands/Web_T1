@@ -15,6 +15,8 @@
         <h2>
             <a href="index">Pagina Principal</a>
             &nbsp;&nbsp;&nbsp;
+            <a href="promocaocadastro">Criar Promoção</a>
+            &nbsp;&nbsp;&nbsp;
            
         </h2>    </center>    <div align="center">
             <c:if test="${promocao != null}"> 

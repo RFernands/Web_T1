@@ -49,6 +49,9 @@ public class PromocaoController extends HttpServlet {
                 case "promocaoatualizacao":
                     atualize(request, response);
                     break;
+                    case "index":
+                    index(request, response);
+                   break;
                 default:
                     lista(request, response);
                     break;
@@ -116,5 +119,9 @@ public class PromocaoController extends HttpServlet {
         Promocao promocao = dao.get(ID);
         dao.delete(promocao);
         response.sendRedirect("lista");
+    }
+    private void index(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

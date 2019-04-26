@@ -49,6 +49,9 @@ public class TeatroController extends HttpServlet {
                 case "teatroatualizacao":
                     atualize(request, response);
                     break;
+                    case "index":
+                    index(request, response);
+                   break;
                 default:
                     lista(request, response);
                     break;
@@ -113,5 +116,9 @@ public class TeatroController extends HttpServlet {
         Teatro teatro = dao.get(CNPJ);
         dao.delete(teatro);
         response.sendRedirect("lista");
+    }
+    private void index(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

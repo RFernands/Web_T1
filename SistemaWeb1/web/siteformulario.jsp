@@ -13,12 +13,11 @@
     <center>
         <h1>Sites de Venda de Ingressos</h1>
         <h2>
-            <a href="teatro/lista">Teatros</a>
+            <a href="index">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="site/lista">Sites de Venda de Ingresso</a>
+            <a href="sitecadastro">Criar Site de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="promocao/lista">Promoções</a>
-            &nbsp;&nbsp;&nbsp;
+            
         </h2>    </center>    <div align="center">
             <c:if test="${site != null}"> 
                 <form action="siteatualizacao" method="post"> 
