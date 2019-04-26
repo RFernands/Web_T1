@@ -15,13 +15,10 @@
     <center>
         <h1>Promocoes</h1>
         <h2>
-            <a href="teatrocadastro">Pagina Inicial</a>
+            <a href="index">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="sitecadastro">Área de Administrador</a>
+            <a href="promocaocadastro">Criar Promoção</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="listacidades">Buscar por Cidade</a>
 
         </h2>
     </center>

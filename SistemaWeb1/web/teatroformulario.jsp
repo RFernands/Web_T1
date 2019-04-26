@@ -13,12 +13,12 @@
     <center>
         <h1>Forulario</h1>
         <h2>
-            <a href="inicial">Pagina Inicial</a>
+            <a href="teatro/lista">Teatros</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="adminlogin">Área de Administrador</a>
+            <a href="site/lista">Sites de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
-            <a href="listacidades">Buscar por Cidade</a>
+            <a href="promocao/lista">Promoções</a>
+            &nbsp;&nbsp;&nbsp;
         </h2>    </center>    <div align="center">
             <c:if test="${teatro != null}"> 
                 <form action="teatroatualizacao" method="post"> 

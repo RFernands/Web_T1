@@ -15,13 +15,12 @@
     <center>
         <h1>Teatros</h1>
         <h2>
-            <a href="teatrocadastro">Pagina Inicial</a>
+            <a href="teatro/lista">Teatros</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="sitecadastro">Área de Administrador</a>
+            <a href="site/lista">Sites de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
+            <a href="promocao/lista">Promoções</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="listacidades">Buscar por Cidade</a>
 
         </h2>
     </center>

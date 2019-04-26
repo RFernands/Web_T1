@@ -7,18 +7,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html> 
     <head>
-        <title>Formulario </title> 
+        <title>Promoções </title> 
     </head>
     <body>
     <center>
-        <h1>Formulario</h1>
+        <h1>Promoções</h1>
         <h2>
-            <a href="inicial">Pagina Inicial</a>
+            <a href="index">Pagina Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="adminlogin">Área de Administrador</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
-            <a href="listacidades">Buscar por Teatro</a>
+           
         </h2>    </center>    <div align="center">
             <c:if test="${promocao != null}"> 
                 <form action="promocaoatualizacao" method="post"> 

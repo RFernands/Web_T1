@@ -25,7 +25,7 @@ public class PromocaoDAO {
     }
 
     public void insert(Promocao promocao) {
-        String sql = "INSERT INTO Site (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Promocao (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);;
