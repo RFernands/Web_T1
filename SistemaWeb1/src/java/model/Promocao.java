@@ -7,7 +7,7 @@ public class Promocao {
     private String CNPJdoTeatro;
     private String nomePeca;
     private float precoPeca;
-    private String data;
+    private String dataPeca;
     private String horario;
 
     public Promocao(int ID) {
@@ -20,7 +20,7 @@ public class Promocao {
         this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
-        this.data = data;
+        this.dataPeca = data;
         this.horario = horario;
     }
 
@@ -29,7 +29,7 @@ public class Promocao {
         this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
-        this.data = data;
+        this.dataPeca = data;
         this.horario = horario;
     }
 
@@ -73,12 +73,12 @@ public class Promocao {
         this.precoPeca = precoPeca;
     }
     
-    public String getData(){
-        return data;
+    public String getDataPeca(){
+        return dataPeca;
     }
     
-    public void setData(String data) {
-        this.data = data;
+    public void setDataPeca(String dataPeca) {
+        this.dataPeca = dataPeca;
     }
 
     public String getHorario() {
