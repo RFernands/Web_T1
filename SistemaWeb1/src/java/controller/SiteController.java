@@ -1,7 +1,7 @@
 package controller;
 
-import model.Teatro;
-import dao.TeatroDAO;
+import model.Site;
+import dao.SiteDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/")
-public class TeatroController extends HttpServlet {
+@WebServlet(urlPatterns = "/site/*")
+public class SiteController extends HttpServlet {
 
-    private TeatroDAO dao;
+    private SiteDAO dao;
 
     @Override
     public void init() {
-        dao = new TeatroDAO();
+        dao = new SiteDAO();
     }
 
     @Override
@@ -59,24 +59,24 @@ public class TeatroController extends HttpServlet {
 
     private void lista(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Teatro> listaTeatros = dao.getAll();
-        request.setAttribute("listaTeatros", listaTeatros);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/lista.jsp");
+        List<Site> listaSites = dao.getAll();
+        request.setAttribute("listaSites", listaSites);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("site/lista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("site/formulario.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormEdicao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String CNPJ = request.getParameter("CNPJ");
-        Teatro teatro = dao.get(CNPJ);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/formulario.jsp");
-        request.setAttribute("teatro", teatro);
+        String URL = request.getParameter("URL");
+        Site site = dao.get(URL);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("site/formulario.jsp");
+        request.setAttribute("site", site);
         dispatcher.forward(request, response);
     }
 
@@ -85,11 +85,11 @@ public class TeatroController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        String CNPJ = request.getParameter("cnpj");
+        String URL = request.getParameter("URL");
         String nome = request.getParameter("nome");
-        String cidade = request.getParameter("cidade");
-        Teatro teatro = new Teatro(email, senha, CNPJ, nome, cidade);
-        dao.insert(teatro);
+        String telefone = request.getParameter("telefone");
+        Site site = new Site(email, senha, URL, nome, telefone);
+        dao.insert(site);
         response.sendRedirect("lista");
     }
 
@@ -98,19 +98,19 @@ public class TeatroController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");        
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        String CNPJ = request.getParameter("CNPJ");
+        String URL = request.getParameter("URL");
         String nome = request.getParameter("nome");
-        String cidade = request.getParameter("cidade");
-        Teatro teatro = new Teatro(email, senha, CNPJ, nome, cidade);
-        dao.update(teatro);
+        String telefone = request.getParameter("telefone");
+        Site site = new Site(email, senha, URL, nome, telefone);
+        dao.update(site);
         response.sendRedirect("lista");
     }
 
     private void remove(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        String CNPJ = request.getParameter("CNPJ");
-        Teatro teatro = dao.get(CNPJ);
-        dao.delete(teatro);
+        String URL = request.getParameter("URL");
+        Site site = dao.get(URL);
+        dao.delete(site);
         response.sendRedirect("lista");
     }
 }

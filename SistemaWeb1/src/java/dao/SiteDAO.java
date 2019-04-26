@@ -10,8 +10,25 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 public class SiteDAO extends GenericDAO {
 
+=======
+public class SiteDAO{
+    
+    public SiteDAO() {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected Connection getConnection() throws SQLException {
+        return DriverManager.getConnection("jdbc:derby://localhost:1527/cadastro", "root", "root");
+    }
+    
+>>>>>>> mergeduas
     public void insert(Site site) {
         String sql = "INSERT INTO Site (email, senha, URL, nome, telefone) VALUES (?, ?, ?, ?, ?)";
         try {

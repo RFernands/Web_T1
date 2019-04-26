@@ -7,6 +7,8 @@ public class Teatro {
     private String CNPJ;
     private String nome;
     private String cidade;
+    
+    public Teatro(){}
 
     public Teatro(String email, String senha, String CNPJ, String nome, String cidade) {
         this.email = email;
