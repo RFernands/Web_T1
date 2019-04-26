@@ -49,6 +49,12 @@ public class PromocaoController extends HttpServlet {
                 case "promocaoatualizacao":
                     atualize(request, response);
                     break;
+                case "promocaporteatro":
+                    filterTeatro(request, response);
+                    break;
+                case "promocaoporsite":
+                    filterSite(request, response);
+                    break;
                 default:
                     lista(request, response);
                     break;
@@ -62,13 +68,13 @@ public class PromocaoController extends HttpServlet {
             throws ServletException, IOException {
         List<Promocao> listaPromocoes = dao.getAll();
         request.setAttribute("listaPromocoes", listaPromocoes);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("promocaolista.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("promocaoformulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaoformulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -76,7 +82,7 @@ public class PromocaoController extends HttpServlet {
             throws ServletException, IOException {
         int ID = Integer.parseInt(request.getParameter("ID"));
         Promocao promocao = dao.get(ID);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("promocaoformulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaoformulario.jsp");
         request.setAttribute("promocao", promocao);
         dispatcher.forward(request, response);
     }
@@ -115,5 +121,23 @@ public class PromocaoController extends HttpServlet {
         Promocao promocao = dao.get(ID);
         dao.delete(promocao);
         response.sendRedirect("lista");
+    }
+
+    private void filterTeatro(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String CNPJ = request.getParameter("CNPJ");
+        List<Promocao> listaPromocoes = dao.getByTeatro(CNPJ);
+        request.setAttribute("listaPromocoes", listaPromocoes);     
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void filterSite(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String URL = request.getParameter("URL");
+        List<Promocao> listaPromocoes = dao.getBySite(URL);
+        request.setAttribute("listaPromocoes", listaPromocoes);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
+        dispatcher.forward(request, response);
     }
 }
