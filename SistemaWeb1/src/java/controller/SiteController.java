@@ -49,6 +49,9 @@ public class SiteController extends HttpServlet {
                 case "siteatualizacao":
                     atualize(request, response);
                     break;
+                case "index":
+                    index(request, response);
+                   break;
                 default:
                     lista(request, response);
                     break;
@@ -113,5 +116,10 @@ public class SiteController extends HttpServlet {
         Site site = dao.get(URL);
         dao.delete(site);
         response.sendRedirect("lista");
+    }
+
+    private void index(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

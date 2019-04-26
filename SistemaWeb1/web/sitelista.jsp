@@ -15,11 +15,9 @@
     <center>
         <h1>Sites</h1>
         <h2>
-            <a href="cadastro">Pagina Inicial</a>
+            <a href="index">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="sitecadastro">Área de Administrador</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
+            <a href="sitecadastro">Criar Site de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
 
         </h2>
@@ -37,6 +35,12 @@
                     <td><c:out value="${site.nome}" /></td>
                     <td><c:out value="${site.URL}" /></td>
                     <td><c:out value="${site.telefone}" /></td>
+                    <td><a href="siteedicao?URL=<c:out value='${site.URL}' />">Edição</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="siteremocao?URL=<c:out value='${site.URL}' />"
+                    onclick="return confirm('Tem certeza de que deseja excluir este item?');">
+                    Remoção
+                </a></td>
                 </tr>
             </c:forEach>
         </table>
