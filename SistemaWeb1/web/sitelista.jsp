@@ -37,6 +37,12 @@
                     <td><c:out value="${site.nome}" /></td>
                     <td><c:out value="${site.URL}" /></td>
                     <td><c:out value="${site.telefone}" /></td>
+                    <td><a href="siteedicao?URL=<c:out value='${site.URL}' />">Edição</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="siteremocao?URL=<c:out value='${site.URL}' />"
+                    onclick="return confirm('Tem certeza de que deseja excluir este item?');">
+                    Remoção
+                </a></td>
                 </tr>
             </c:forEach>
         </table>

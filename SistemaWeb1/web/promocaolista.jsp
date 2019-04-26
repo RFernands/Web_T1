@@ -43,7 +43,14 @@
                     <td><c:out value="${promocao.horario}" /></td>
                     <td><c:out value="${promocao.precoPeca}" /></td>
                     <td><c:out value="${promocao.URLdoSite}" /></td>
-                    <td><c:out value="${promocao.CNPJdoTeatro}" /></td>                    
+                    <td><c:out value="${promocao.CNPJdoTeatro}" /></td>
+                    <td><c:out value="${promocao.ID}" /></td>
+                    <td><a href="promocaoedicao?ID=<c:out value='${promocao.ID}' />">Edição</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="promocaoremocao?ID=<c:out value='${promocao.ID}' />"
+                    onclick="return confirm('Tem certeza de que deseja excluir este item?');">
+                    Remoção
+                </a></td>
                 </tr>
             </c:forEach>
         </table>

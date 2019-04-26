@@ -29,7 +29,7 @@
                                 <caption>
                                     <h2> 
                                         <c:if test="${site != null}">
-                                            Edi aã oç
+                                            Edição
                                         </c:if>
                                             <c:if test="${site == null}">
                                                 Cadastro

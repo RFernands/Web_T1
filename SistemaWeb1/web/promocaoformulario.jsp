@@ -21,10 +21,10 @@
             <a href="listacidades">Buscar por Teatro</a>
         </h2>    </center>    <div align="center">
             <c:if test="${promocao != null}"> 
-                <form action="teatroatualizacao" method="post"> 
+                <form action="promocaoatualizacao" method="post"> 
                 </c:if>
                     <c:if test="${promocao == null}">
-                        <form action="teatroinsercao" method="post"> 
+                        <form action="promocaoinsercao" method="post"> 
                         </c:if>  
                             <table border="1" cellpadding="5">
                                 <caption>
@@ -38,31 +38,31 @@
                                     </h2>
                                 </caption>
                                 <c:if test="${promocao != null}"> 
-                                    <input type="hidden" name="id" value="<c:out value='${promocao.id}' />" />
+                                    <input type="hidden" name="ID" value="<c:out value='${promocao.ID}' />" />
                                 </c:if>
                                     <tr> 
                                         <th>Nome: </th>
                                         <td>
-                                            <input type="text" name="nome" size="45" required
+                                            <input type="text" name="nomePeca" size="45" required
                                                    value="<c:out value='${promocao.nomePeca}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Cidade: </th>
+                                        <th>Data </th>
                                         <td>
                                             <input type="text" name="dataPeca" size="45" required
                                                    value="<c:out value='${promocao.dataPeca}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>CNPJ: </th>
+                                        <th>Horario: </th>
                                         <td>
                                             <input type="text" name="horario" size="5" required
                                                    value="<c:out value='${promocao.horario}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>email: </th> 
+                                        <th>Preço: </th> 
                                         <td>
                                             <input type="text" name="precoPeca" size="45" required
                                                    value="<c:out value='${promocao.precoPeca}' />"
@@ -70,7 +70,7 @@
                                         </td>
                                     </tr> 
                                     <tr>
-                                        <th>senha: </th> 
+                                        <th>URL: </th> 
                                         <td>
                                             <input type="text" name="URLdoSite" size="45" required
                                                    value="<c:out value='${promocao.URLdoSite}' />"
@@ -78,7 +78,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>senha: </th> 
+                                        <th>CNPJ do teatro: </th> 
                                         <td>
                                             <input type="text" name="CNPJdoTeatro" size="45" required
                                                    value="<c:out value='${promocao.CNPJdoTeatro}' />"

@@ -104,7 +104,8 @@ public class PromocaoController extends HttpServlet {
         float precoPeca = Float.parseFloat(request.getParameter("precoPeca"));
         String dataPeca = request.getParameter("dataPeca");
         String horario = request.getParameter("horario");
-        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
+        Integer ID = Integer.parseInt(request.getParameter("ID"));
+        Promocao promocao = new Promocao(ID,URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.update(promocao);
         response.sendRedirect("lista");
     }

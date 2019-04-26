@@ -15,11 +15,11 @@
         <h1>Hello World!</h1>
         
          <h2>
-            <a href="teatro/cadastro">Pagina Inicial</a>
+            <a href="teatro/lista">Teatros</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="teatro">Área de Administrador</a>
+            <a href="site/lista">Sites de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
+            <a href="promocao/lista">Promoções</a>
             &nbsp;&nbsp;&nbsp;
             <a href="listacidades">Buscar por Cidade</a>
 
