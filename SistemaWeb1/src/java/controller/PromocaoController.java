@@ -55,6 +55,9 @@ public class PromocaoController extends HttpServlet {
                 case "promocaoporsite":
                     filterSite(request, response);
                     break;
+                case "index":
+                    index(request, response);
+                   break;
                 default:
                     lista(request, response);
                     break;
@@ -110,7 +113,8 @@ public class PromocaoController extends HttpServlet {
         float precoPeca = Float.parseFloat(request.getParameter("precoPeca"));
         String dataPeca = request.getParameter("dataPeca");
         String horario = request.getParameter("horario");
-        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
+        Integer ID = Integer.parseInt(request.getParameter("ID"));
+        Promocao promocao = new Promocao(ID,URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.update(promocao);
         response.sendRedirect("lista");
     }
@@ -139,5 +143,9 @@ public class PromocaoController extends HttpServlet {
         request.setAttribute("listaPromocoes", listaPromocoes);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
+    }
+    private void index(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }
