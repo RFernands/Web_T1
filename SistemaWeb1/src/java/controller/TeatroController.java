@@ -96,7 +96,7 @@ public class TeatroController extends HttpServlet {
 
     private void atualize(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        request.setCharacterEncoding("UTF-8");        
+        request.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
         String CNPJ = request.getParameter("CNPJ");
@@ -113,5 +113,14 @@ public class TeatroController extends HttpServlet {
         Teatro teatro = dao.get(CNPJ);
         dao.delete(teatro);
         response.sendRedirect("lista");
+    }
+
+    private void filterCidade(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String cidade = request.getParameter("cidade");
+        List<Teatro> listaTeatros = dao.getByCity(cidade);
+        request.setAttribute("listaTeatros", listaTeatros);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatrolista.jsp");
+        dispatcher.forward(request, response);
     }
 }
