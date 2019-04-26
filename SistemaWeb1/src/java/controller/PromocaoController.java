@@ -30,22 +30,23 @@ public class PromocaoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        String action = request.getServletPath();
+        String action = request.getRequestURI();
+        action = action.split("/")[action.split("/").length - 1];
         try {
             switch (action) {
-                case "/cadastro":
+                case "promocaocadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "/insercao":
+                case "promocaoinsercao":
                     insere(request, response);
                     break;
-                case "/remocao":
+                case "promocaoremocao":
                     remove(request, response);
                     break;
-                case "/edicao":
+                case "promocaoedicao":
                     apresentaFormEdicao(request, response);
                     break;
-                case "/atualizacao":
+                case "promocaoatualizacao":
                     atualize(request, response);
                     break;
                 default:
@@ -61,13 +62,13 @@ public class PromocaoController extends HttpServlet {
             throws ServletException, IOException {
         List<Promocao> listaPromocoes = dao.getAll();
         request.setAttribute("listaPromocoes", listaPromocoes);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("promocao/lista.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("promocao/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaoformulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -75,7 +76,7 @@ public class PromocaoController extends HttpServlet {
             throws ServletException, IOException {
         int ID = Integer.parseInt(request.getParameter("ID"));
         Promocao promocao = dao.get(ID);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("promocao/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaoformulario.jsp");
         request.setAttribute("promocao", promocao);
         dispatcher.forward(request, response);
     }
@@ -87,9 +88,9 @@ public class PromocaoController extends HttpServlet {
         String CNPJdoTeatro = request.getParameter("CNPJdoTeatro");
         String nomePeca = request.getParameter("nomePeca");
         float precoPeca = Float.parseFloat(request.getParameter("precoPeca"));
-        String data = request.getParameter("data");
+        String dataPeca = request.getParameter("dataPeca");
         String horario = request.getParameter("horario");
-        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.insert(promocao);
         response.sendRedirect("lista");
     }
@@ -101,9 +102,9 @@ public class PromocaoController extends HttpServlet {
         String CNPJdoTeatro = request.getParameter("CNPJdoTeatro");
         String nomePeca = request.getParameter("nomePeca");
         float precoPeca = Float.parseFloat(request.getParameter("precoPeca"));
-        String data = request.getParameter("data");
+        String dataPeca = request.getParameter("dataPeca");
         String horario = request.getParameter("horario");
-        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.update(promocao);
         response.sendRedirect("lista");
     }

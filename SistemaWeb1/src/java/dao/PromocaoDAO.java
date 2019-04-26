@@ -25,7 +25,7 @@ public class PromocaoDAO {
     }
 
     public void insert(Promocao promocao) {
-        String sql = "INSERT INTO Site (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Site (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);;
@@ -34,7 +34,7 @@ public class PromocaoDAO {
             statement.setString(2, promocao.getCNPJdoTeatro());
             statement.setString(3, promocao.getNomePeca());
             statement.setFloat(4, promocao.getPrecoPeca());
-            statement.setString(5, promocao.getData());
+            statement.setString(5, promocao.getDataPeca());
             statement.setString(6, promocao.getHorario());
             statement.executeUpdate();
             statement.close();
@@ -56,9 +56,9 @@ public class PromocaoDAO {
                 String CNPJdoTeatro = resultSet.getString("CNPJdoTeatro");
                 String nomePeca = resultSet.getString("nomePeca");
                 float precoPeca = resultSet.getFloat("precoPeca");
-                String data = resultSet.getString("data");
+                String dataPeca = resultSet.getString("dataPeca");
                 String horario = resultSet.getString("horario");
-                Promocao promocao = new Promocao(ULRdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+                Promocao promocao = new Promocao(ULRdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
                 listaPromocoes.add(promocao);
             }
             resultSet.close();
@@ -85,7 +85,7 @@ public class PromocaoDAO {
     }
 
     public void update(Promocao promocao) {
-        String sql = "UPDATE Promocao SET URLdoSite = ?, CNPJdoTeatro = ?, nomePeca = ?, precoPeca = ?, data = ?, horario =?";
+        String sql = "UPDATE Promocao SET URLdoSite = ?, CNPJdoTeatro = ?, nomePeca = ?, precoPeca = ?, dataPeca = ?, horario =?";
         sql += " WHERE ID = ?";
         try {
             Connection conn = this.getConnection();
@@ -94,7 +94,7 @@ public class PromocaoDAO {
             statement.setString(2, promocao.getCNPJdoTeatro());
             statement.setString(3, promocao.getNomePeca());
             statement.setFloat(4, promocao.getPrecoPeca());
-            statement.setString(5, promocao.getData());
+            statement.setString(5, promocao.getDataPeca());
             statement.setString(6, promocao.getHorario());
             statement.executeUpdate();
             statement.close();
@@ -118,9 +118,9 @@ public class PromocaoDAO {
                 String CNPJdoTeatro = resultSet.getString("CNPJdoTeatro");
                 String nomePeca = resultSet.getString("nomePeca");
                 float precoPeca = resultSet.getFloat("precoPeca");
-                String data = resultSet.getString("data");
+                String dataPeca = resultSet.getString("dataPeca");
                 String horario = resultSet.getString("horario");
-                promocao = new Promocao(ID, URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+                promocao = new Promocao(ID, URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
             }
             resultSet.close();
             statement.close();
@@ -145,9 +145,9 @@ public class PromocaoDAO {
                 String URLdoSite = resultSet.getString("URLdoSite");
                 String nomePeca = resultSet.getString("nomePeca");
                 float precoPeca = resultSet.getFloat("precoPeca");
-                String data = resultSet.getString("data");
+                String dataPeca = resultSet.getString("dataPeca");
                 String horario = resultSet.getString("horario");
-                Promocao promocao = new Promocao(ID, URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+                Promocao promocao = new Promocao(ID, URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
                 listaPromocoes.add(promocao);
             }
             resultSet.close();
@@ -173,9 +173,9 @@ public class PromocaoDAO {
                 String CNPJdoTeatro = resultSet.getString("CNPJdoTeatro");
                 String nomePeca = resultSet.getString("nomePeca");
                 float precoPeca = resultSet.getFloat("precoPeca");
-                String data = resultSet.getString("data");
+                String dataPeca = resultSet.getString("dataPeca");
                 String horario = resultSet.getString("horario");
-                Promocao promocao = new Promocao(ID, URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+                Promocao promocao = new Promocao(ID, URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
                 listaPromocoes.add(promocao);
             }
             resultSet.close();

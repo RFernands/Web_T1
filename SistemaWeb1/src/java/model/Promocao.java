@@ -7,29 +7,29 @@ public class Promocao {
     private String CNPJdoTeatro;
     private String nomePeca;
     private float precoPeca;
-    private String data;
+    private String dataPeca;
     private String horario;
 
     public Promocao(int ID) {
         this.ID = ID;
     }
 
-    public Promocao(int ID, String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String data, String horario) {
+    public Promocao(int ID, String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String dataPeca, String horario) {
         this.ID = ID;
         this.URLdoSite = URLdoSite;
         this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
-        this.data = data;
+        this.dataPeca = dataPeca;
         this.horario = horario;
     }
 
-    public Promocao(String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String data, String horario) {
+    public Promocao(String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String dataPeca, String horario) {
         this.URLdoSite = URLdoSite;
         this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
-        this.data = data;
+        this.dataPeca = dataPeca;
         this.horario = horario;
     }
 
@@ -73,12 +73,12 @@ public class Promocao {
         this.precoPeca = precoPeca;
     }
     
-    public String getData(){
-        return data;
+    public String getDataPeca(){
+        return dataPeca;
     }
     
-    public void setData(String data) {
-        this.data = data;
+    public void setDataPeca(String dataPeca) {
+        this.dataPeca = dataPeca;
     }
 
     public String getHorario() {
