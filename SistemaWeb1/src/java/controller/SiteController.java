@@ -33,19 +33,19 @@ public class SiteController extends HttpServlet {
         String action = request.getServletPath();
         try {
             switch (action) {
-                case "/cadastro":
+                case "/sitecadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "/insercao":
+                case "/siteinsercao":
                     insere(request, response);
                     break;
-                case "/remocao":
+                case "/siteremocao":
                     remove(request, response);
                     break;
-                case "/edicao":
+                case "/siteedicao":
                     apresentaFormEdicao(request, response);
                     break;
-                case "/atualizacao":
+                case "/siteatualizacao":
                     atualize(request, response);
                     break;
                 default:

@@ -47,17 +47,31 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Cidade: </th>
+                                        <th>URL </th>
                                         <td>
                                             <input type="text" name="cidade" size="45" required
-                                                   value="<c:out value='${site.url}' />"/>
+                                                   value="<c:out value='${site.URL}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>CNPJ: </th>
+                                        <th>Telefone: </th>
                                         <td>
                                             <input type="text" name="cnpj" size="45" required
                                                    value="<c:out value='${site.telefone}' />"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email: </th>
+                                        <td>
+                                            <input type="text" name="cnpj" size="45" required
+                                                   value="<c:out value='${site.email}' />"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Senha: </th>
+                                        <td>
+                                            <input type="text" name="cnpj" size="45" required
+                                                   value="<c:out value='${site.senha}' />"/>
                                         </td>
                                     </tr>
                                     <tr> 

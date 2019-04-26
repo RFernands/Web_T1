@@ -21,10 +21,10 @@
             <a href="listacidades">Buscar por Cidade</a>
         </h2>    </center>    <div align="center">
             <c:if test="${teatro != null}"> 
-                <form action="atualizacao" method="post"> 
+                <form action="teatroatualizacao" method="post"> 
                 </c:if>
                     <c:if test="${teatro == null}">
-                        <form action="insercao" method="post"> 
+                        <form action="teatroinsercao" method="post"> 
                         </c:if>  
                             <table border="1" cellpadding="5">
                                 <caption>

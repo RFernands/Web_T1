@@ -33,19 +33,19 @@ public class TeatroController extends HttpServlet {
         String action = request.getServletPath();
         try {
             switch (action) {
-                case "/cadastro":
+                case "/teatrocadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "/insercao":
+                case "/teatroinsercao":
                     insere(request, response);
                     break;
-                case "/remocao":
+                case "/teatroremocao":
                     remove(request, response);
                     break;
-                case "/edicao":
+                case "/teatroedicao":
                     apresentaFormEdicao(request, response);
                     break;
-                case "/atualizacao":
+                case "/teatroatualizacao":
                     atualize(request, response);
                     break;
                 default:
