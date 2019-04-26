@@ -7,73 +7,76 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html> 
     <head>
-        <title>Sites de Venda de Ingressos </title> 
+        <title>Formulario </title> 
     </head>
     <body>
     <center>
-        <h1>Sites de Venda de Ingressos</h1>
+        <h1>Forulario</h1>
         <h2>
             <a href="inicial">Pagina Inicial</a>
             &nbsp;&nbsp;&nbsp;
             <a href="adminlogin">Área de Administrador</a>
             &nbsp;&nbsp;&nbsp;
             <a href="criarpromocoes">Criar Promoções</a>
+            <a href="listacidades">Buscar por Cidade</a>
         </h2>    </center>    <div align="center">
-            <c:if test="${site != null}"> 
-                <form action="siteatualizacao" method="post"> 
+            <c:if test="${teatro != null}"> 
+                <form action="teatroatualizacao" method="post"> 
                 </c:if>
-                    <c:if test="${site == null}">
-                        <form action="siteinsercao" method="post"> 
+                    <c:if test="${teatro == null}">
+                        <form action="teatroinsercao" method="post"> 
                         </c:if>  
                             <table border="1" cellpadding="5">
                                 <caption>
                                     <h2> 
-                                        <c:if test="${site != null}">
+                                        <c:if test="${teatro != null}">
                                             Edi aã oç
                                         </c:if>
-                                            <c:if test="${site == null}">
+                                            <c:if test="${teatro == null}">
                                                 Cadastro
                                             </c:if>
                                     </h2>
                                 </caption>
-                                <c:if test="${site != null}"> 
-                                    <input type="hidden" name="id" value="<c:out value='${site.id}' />" />
+                                <c:if test="${teatro != null}"> 
+                                    <input type="hidden" name="id" value="<c:out value='${livro.id}' />" />
                                 </c:if>
                                     <tr> 
                                         <th>Nome: </th>
                                         <td>
                                             <input type="text" name="nome" size="45" required
-                                                   value="<c:out value='${site.nome}' />"/>
+                                                   value="<c:out value='${teatro.nome}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>URL </th>
+                                        <th>Cidade: </th>
                                         <td>
                                             <input type="text" name="cidade" size="45" required
-                                                   value="<c:out value='${site.URL}' />"/>
+                                                   value="<c:out value='${teatro.cidade}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Telefone: </th>
+                                        <th>CNPJ: </th>
                                         <td>
-                                            <input type="text" name="cnpj" size="45" required
-                                                   value="<c:out value='${site.telefone}' />"/>
+                                            <input type="text" name="cnpj" size="5" required
+                                                   value="<c:out value='${teatro.CNPJ}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Email: </th>
+                                        <th>email: </th> 
                                         <td>
-                                            <input type="text" name="cnpj" size="45" required
-                                                   value="<c:out value='${site.email}' />"/>
+                                            <input type="text" name="email" size="45" required
+                                                   value="<c:out value='${teatro.email}' />"
+                                                   /> 
                                         </td>
-                                    </tr>
+                                    </tr> 
                                     <tr>
-                                        <th>Senha: </th>
+                                        <th>senha: </th> 
                                         <td>
-                                            <input type="text" name="cnpj" size="45" required
-                                                   value="<c:out value='${site.senha}' />"/>
+                                            <input type="text" name="senha" size="45" required
+                                                   value="<c:out value='${teatro.senha}' />"
+                                                   /> 
                                         </td>
-                                    </tr>
+                                    </tr> 
                                     <tr> 
                                         <td colspan="2" align="center"> 
                                             <input type="submit" value="Salva" />

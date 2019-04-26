@@ -30,22 +30,23 @@ public class SiteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        String action = request.getServletPath();
+        String action = request.getRequestURI();
+        action = action.split("/")[action.split("/").length - 1];
         try {
             switch (action) {
-                case "/sitecadastro":
+                case "sitecadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "/siteinsercao":
+                case "siteinsercao":
                     insere(request, response);
                     break;
-                case "/siteremocao":
+                case "siteremocao":
                     remove(request, response);
                     break;
-                case "/siteedicao":
+                case "siteedicao":
                     apresentaFormEdicao(request, response);
                     break;
-                case "/siteatualizacao":
+                case "siteatualizacao":
                     atualize(request, response);
                     break;
                 default:
@@ -61,13 +62,13 @@ public class SiteController extends HttpServlet {
             throws ServletException, IOException {
         List<Site> listaSites = dao.getAll();
         request.setAttribute("listaSites", listaSites);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("site/lista.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/sitelista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("site/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/siteformulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -75,7 +76,7 @@ public class SiteController extends HttpServlet {
             throws ServletException, IOException {
         String URL = request.getParameter("URL");
         Site site = dao.get(URL);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("site/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/siteformulario.jsp");
         request.setAttribute("site", site);
         dispatcher.forward(request, response);
     }
