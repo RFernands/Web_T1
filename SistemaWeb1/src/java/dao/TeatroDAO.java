@@ -10,14 +10,25 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeatroDAO extends GenericDAO {
+public class TeatroDAO {
+
+    public TeatroDAO() {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected Connection getConnection() throws SQLException {
+        return DriverManager.getConnection("jdbc:derby://localhost:1527/cadastro", "root", "root");
+    }
 
     public void insert(Teatro teatro) {
         String sql = "INSERT INTO Teatro (email, senha, CNPJ, nome, cidade) VALUES (?, ?, ?, ?, ?)";
         try {
             Connection conn = this.getConnection();
-            PreparedStatement statement = conn.prepareStatement(sql);
-
+            PreparedStatement statement = conn.prepareStatement(sql);;
             statement = conn.prepareStatement(sql);
             statement.setString(1, teatro.getEmail());
             statement.setString(2, teatro.getSenha());
@@ -62,7 +73,6 @@ public class TeatroDAO extends GenericDAO {
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);
-
             statement.setString(1, teatro.getCNPJ());
             statement.executeUpdate();
             statement.close();
@@ -78,7 +88,6 @@ public class TeatroDAO extends GenericDAO {
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);
-
             statement.setString(1, teatro.getEmail());
             statement.setString(2, teatro.getSenha());
             statement.setString(3, teatro.getNome());
@@ -115,31 +124,5 @@ public class TeatroDAO extends GenericDAO {
             throw new RuntimeException(e);
         }
         return teatro;
-    }
-
-    public List<Teatro> getByCity(String cidade) {
-        List<Teatro> listaTeatros = new ArrayList<>();
-        String sql = "SELECT id, email, senha, cnpj, nome, cidade FROM Teatro,Usuario where id = id_usuario and cidade = ?";
-        try {
-            Connection conn = this.getConnection();
-            PreparedStatement statement = conn.prepareStatement(sql);
-
-            statement.setString(1, cidade);
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                String email = resultSet.getString("email");
-                String senha = resultSet.getString("senha");
-                String CNPJ = resultSet.getString("CNPJ");
-                String nome = resultSet.getString("nome");
-                Teatro teatro = new Teatro(email, senha, CNPJ, nome, cidade);
-                listaTeatros.add(teatro);
-            }
-            resultSet.close();
-            statement.close();
-            conn.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return listaTeatros;
     }
 }
