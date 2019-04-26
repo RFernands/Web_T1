@@ -125,4 +125,30 @@ public class TeatroDAO {
         }
         return teatro;
     }
+    
+        public List<Teatro> getByCity(String cidade) {
+        List<Teatro> listaTeatros = new ArrayList<>();
+        String sql = "SELECT id, email, senha, cnpj, nome, cidade FROM Teatro,Usuario where id = id_usuario and cidade = ?";
+        try {
+            Connection conn = this.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+
+            statement.setString(1, cidade);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                String email = resultSet.getString("email");
+                String senha = resultSet.getString("senha");
+                String CNPJ = resultSet.getString("CNPJ");
+                String nome = resultSet.getString("nome");
+                Teatro teatro = new Teatro(email, senha, CNPJ, nome, cidade);
+                listaTeatros.add(teatro);
+            }
+            resultSet.close();
+            statement.close();
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return listaTeatros;
+    }
 }
