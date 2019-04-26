@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/")
+@WebServlet(urlPatterns = {"/teatro/*"})
 public class TeatroController extends HttpServlet {
 
     private TeatroDAO dao;
@@ -30,22 +30,23 @@ public class TeatroController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
-        String action = request.getServletPath();
+        String action = request.getRequestURI();
+        action = action.split("/")[action.split("/").length - 1];
         try {
             switch (action) {
-                case "/cadastro":
+                case "teatrocadastro":
                     apresentaFormCadastro(request, response);
                     break;
-                case "/insercao":
+                case "teatroinsercao":
                     insere(request, response);
                     break;
-                case "/remocao":
+                case "teatroremocao":
                     remove(request, response);
                     break;
-                case "/edicao":
+                case "teatroedicao":
                     apresentaFormEdicao(request, response);
                     break;
-                case "/atualizacao":
+                case "teatroatualizacao":
                     atualize(request, response);
                     break;
                 default:
@@ -61,13 +62,13 @@ public class TeatroController extends HttpServlet {
             throws ServletException, IOException {
         List<Teatro> listaTeatros = dao.getAll();
         request.setAttribute("listaTeatros", listaTeatros);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/lista.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatrolista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatroformulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -75,7 +76,7 @@ public class TeatroController extends HttpServlet {
             throws ServletException, IOException {
         String CNPJ = request.getParameter("CNPJ");
         Teatro teatro = dao.get(CNPJ);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("teatro/formulario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatroformulario.jsp");
         request.setAttribute("teatro", teatro);
         dispatcher.forward(request, response);
     }

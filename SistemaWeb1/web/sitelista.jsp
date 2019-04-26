@@ -9,35 +9,34 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
-        <title>Teatros</title>
+        <title>Sites de Venda de Ingressos</title>
     </head>
     <body>
     <center>
-        <h1>Teatros</h1>
+        <h1>Sites</h1>
         <h2>
-            <a href="teatrocadastro">Pagina Inicial</a>
+            <a href="cadastro">Pagina Inicial</a>
             &nbsp;&nbsp;&nbsp;
             <a href="sitecadastro">Área de Administrador</a>
             &nbsp;&nbsp;&nbsp;
             <a href="criarpromocoes">Criar Promoções</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="listacidades">Buscar por Cidade</a>
 
         </h2>
     </center>
     <div align="center">
         <table border="1" cellpadding="5">
-            <caption><h2>Lista de Teatros</h2></caption>
+            <caption><h2>Lista de Sites de Venda de Ingresso</h2></caption>
             <tr>
                 <th>Nome</th>
-                <th>Cidade</th>
-                <th>CNPJ</th>
+                <th>URL</th>
+                <th>Telefone</th>
             </tr>
-            <c:forEach var="teatro" items="${requestScope.listaTeatros}">
+            <c:forEach var="site" items="${requestScope.listaSites}">
                 <tr>
-                    <td><c:out value="${teatro.nome}" /></td>
-                    <td><c:out value="${teatro.cidade}" /></td>
-                    <td><c:out value="${teatro.CNPJ}" /></td>
+                    <td><c:out value="${site.nome}" /></td>
+                    <td><c:out value="${site.URL}" /></td>
+                    <td><c:out value="${site.telefone}" /></td>
                 </tr>
             </c:forEach>
         </table>
