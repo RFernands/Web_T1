@@ -62,13 +62,13 @@ public class TeatroController extends HttpServlet {
             throws ServletException, IOException {
         List<Teatro> listaTeatros = dao.getAll();
         request.setAttribute("listaTeatros", listaTeatros);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/listateatro.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatrolista.jsp");
         dispatcher.forward(request, response);
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/formularioteatro.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatroformulario.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -76,7 +76,7 @@ public class TeatroController extends HttpServlet {
             throws ServletException, IOException {
         String CNPJ = request.getParameter("CNPJ");
         Teatro teatro = dao.get(CNPJ);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/formularioteatro.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/teatroformulario.jsp");
         request.setAttribute("teatro", teatro);
         dispatcher.forward(request, response);
     }

@@ -32,7 +32,7 @@
                 <th>URL</th>
                 <th>Telefone</th>
             </tr>
-            <c:forEach var="teatro" items="${requestScope.listaSites}">
+            <c:forEach var="site" items="${requestScope.listaSites}">
                 <tr>
                     <td><c:out value="${site.nome}" /></td>
                     <td><c:out value="${site.URL}" /></td>
