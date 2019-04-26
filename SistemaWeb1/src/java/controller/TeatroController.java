@@ -85,7 +85,7 @@ public class TeatroController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        String CNPJ = request.getParameter("CNPJ");
+        String CNPJ = request.getParameter("cnpj");
         String nome = request.getParameter("nome");
         String cidade = request.getParameter("cidade");
         Teatro teatro = new Teatro(email, senha, CNPJ, nome, cidade);

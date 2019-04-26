@@ -15,7 +15,7 @@
     <center>
         <h1>Teatros</h1>
         <h2>
-            <a href="inicial">Pagina Inicial</a>
+            <a href="cadastro">Pagina Inicial</a>
             &nbsp;&nbsp;&nbsp;
             <a href="adminlogin">Área de Administrador</a>
             &nbsp;&nbsp;&nbsp;
