@@ -14,22 +14,22 @@ public class Promocao {
         this.ID = ID;
     }
 
-    public Promocao(int ID, String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String data, String horario) {
+    public Promocao(int ID, String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String dataPeca, String horario) {
         this.ID = ID;
         this.URLdoSite = URLdoSite;
         this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
-        this.dataPeca = data;
+        this.dataPeca = dataPeca;
         this.horario = horario;
     }
 
-    public Promocao(String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String data, String horario) {
+    public Promocao(String URLdoSite, String CNPJdoTeatro, String nomePeca, float precoPeca, String dataPeca, String horario) {
         this.URLdoSite = URLdoSite;
         this.CNPJdoTeatro = CNPJdoTeatro;
         this.nomePeca = nomePeca;
         this.precoPeca = precoPeca;
-        this.dataPeca = data;
+        this.dataPeca = dataPeca;
         this.horario = horario;
     }
 

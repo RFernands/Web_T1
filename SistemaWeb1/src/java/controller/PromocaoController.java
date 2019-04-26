@@ -87,9 +87,9 @@ public class PromocaoController extends HttpServlet {
         String CNPJdoTeatro = request.getParameter("CNPJdoTeatro");
         String nomePeca = request.getParameter("nomePeca");
         float precoPeca = Float.parseFloat(request.getParameter("precoPeca"));
-        String data = request.getParameter("data");
+        String dataPeca = request.getParameter("dataPeca");
         String horario = request.getParameter("horario");
-        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.insert(promocao);
         response.sendRedirect("lista");
     }
@@ -101,9 +101,9 @@ public class PromocaoController extends HttpServlet {
         String CNPJdoTeatro = request.getParameter("CNPJdoTeatro");
         String nomePeca = request.getParameter("nomePeca");
         float precoPeca = Float.parseFloat(request.getParameter("precoPeca"));
-        String data = request.getParameter("data");
+        String dataPeca = request.getParameter("dataPeca");
         String horario = request.getParameter("horario");
-        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, data, horario);
+        Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.update(promocao);
         response.sendRedirect("lista");
     }
