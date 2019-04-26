@@ -25,7 +25,7 @@ public class PromocaoDAO {
     }
 
     public void insert(Promocao promocao) {
-        String sql = "INSERT INTO Site (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Promocao (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = this.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql);;
@@ -58,7 +58,9 @@ public class PromocaoDAO {
                 float precoPeca = resultSet.getFloat("precoPeca");
                 String dataPeca = resultSet.getString("dataPeca");
                 String horario = resultSet.getString("horario");
-                Promocao promocao = new Promocao(ULRdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
+                Integer ID = resultSet.getInt("ID");
+
+                Promocao promocao = new Promocao(ID, ULRdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
                 listaPromocoes.add(promocao);
             }
             resultSet.close();
@@ -96,6 +98,7 @@ public class PromocaoDAO {
             statement.setFloat(4, promocao.getPrecoPeca());
             statement.setString(5, promocao.getDataPeca());
             statement.setString(6, promocao.getHorario());
+            statement.setInt(7, promocao.getID());
             statement.executeUpdate();
             statement.close();
             conn.close();
