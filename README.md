@@ -1,12 +1,14 @@
 Trabalho 1 de WEB
 
-SGBD utilizado, nome do banco, usu·rio e senha de acesso
+Integrantes: Rebecca Fernands e Natasha Graifman
+
+SGBD utilizado, nome do banco, usu√°rio e senha de acesso
 SGDB: JavaDB
 Nome do banco: cadastro
-Usu·rio: root
+Usu√°rio: root
 Senha: root
 
-Como criar as tabelas? Existe algum script de criaÁ„o da tabelas? Onde est· localizado?
+Como criar as tabelas? Existe algum script de cria√ß√£o da tabelas? Onde est√° localizado?
 
-O script para criaÁ„o est· em: /Web_T1/tabelas.sql
-e o script para popular as tabelas est· em: Web_T1/script.sql
+O script para cria√ß√£o est√° em: /Web_T1/tabelas.sql
+e o script para popular as tabelas est√° em: Web_T1/script.sql
