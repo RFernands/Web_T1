@@ -15,9 +15,9 @@
     <center>
         <h1>Promocoes</h1>
         <h2>
-            <a href="index">Página Principal</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="promocaocadastro">Criar Promoção</a>
+            <a href="promocaocadastro">Cadastrar Promoção</a>
             &nbsp;&nbsp;&nbsp;
 
         </h2>

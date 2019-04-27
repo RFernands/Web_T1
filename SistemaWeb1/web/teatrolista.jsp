@@ -15,11 +15,9 @@
     <center>
         <h1>Teatros</h1>
         <h2>
-            <a href="teatro/lista">Teatros</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="site/lista">Sites de Venda de Ingresso</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="promocao/lista">Promoções</a>
+            <a href="teatrocadastro">Cadastrar Teatros</a>
             &nbsp;&nbsp;&nbsp;
 
         </h2>
