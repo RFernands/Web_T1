@@ -33,7 +33,10 @@
             <c:forEach var="site" items="${requestScope.listaSites}">
                 <tr>
                     <td><c:out value="${site.nome}" /></td>
-                    <td><c:out value="${site.URL}" /></td>
+                   
+                    <td><a href="/SistemaWeb1/promocao/promocaoporsite?URL=<c:out value='${site.URL}' />"
+                    onclick>                    
+                        <c:out value="${site.URL}" /></a></td>
                     <td><c:out value="${site.telefone}" /></td>
                     <td><a href="siteedicao?URL=<c:out value='${site.URL}' />">Edição</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
