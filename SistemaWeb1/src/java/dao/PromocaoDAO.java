@@ -28,7 +28,7 @@ public class PromocaoDAO {
         String sql = "INSERT INTO Promocao (URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             Connection conn = this.getConnection();
-            PreparedStatement statement = conn.prepareStatement(sql);;
+            PreparedStatement statement = conn.prepareStatement(sql);
             statement = conn.prepareStatement(sql);
             statement.setString(1, promocao.getURLdoSite());
             statement.setString(2, promocao.getCNPJdoTeatro());

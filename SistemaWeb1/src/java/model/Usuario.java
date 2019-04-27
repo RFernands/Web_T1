@@ -23,12 +23,7 @@ public class Usuario {
         this.senha = senha;
         this.ativo = ativo;
     }
-/*
-    public Usuario(String email, int ativo) {
-        this.email = email;
-        this.ativo = ativo;
-    }
-*/
+
     public int getID() {
         return ID;
     }

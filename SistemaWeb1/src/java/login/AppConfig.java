@@ -31,10 +31,14 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+                .csrf().disable()
+                .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasRole("USER")
-               // .anyRequest().authenticated()
+                .antMatchers("/teatro/**").hasRole("ADMIN")
+                .antMatchers("/site/**").hasRole("ADMIN")
+                .antMatchers("/promocao/cadastro").hasRole("TEATRO")
+                // .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .and()

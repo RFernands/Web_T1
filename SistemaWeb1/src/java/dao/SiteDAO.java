@@ -28,7 +28,7 @@ public class SiteDAO{
         String sql = "INSERT INTO Site (email, senha, URL, nome, telefone) VALUES (?, ?, ?, ?, ?)";
         try {
             Connection conn = this.getConnection();
-            PreparedStatement statement = conn.prepareStatement(sql);;
+            PreparedStatement statement = conn.prepareStatement(sql);
             statement = conn.prepareStatement(sql);
             statement.setString(1, site.getEmail());
             statement.setString(2, site.getSenha());

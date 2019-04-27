@@ -17,10 +17,10 @@ public class CriaUsuarios {
             Connection conn = ds.getConnection();
 
             String userSql = "Insert into Usuario (email, senha, ativo) "
-                    + "values (?,?,?)";
+                    + "values (?, ?, ?)";
 
             String roleSql = "Insert into Papel (email, nome)"
-                    + "values (?,?)";
+                    + "values (?, ?)";
 
             PreparedStatement userStatement = conn.prepareStatement(userSql);
             userStatement.setString(1, "admin@admin");
