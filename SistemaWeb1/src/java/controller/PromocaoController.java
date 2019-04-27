@@ -3,13 +3,18 @@ package controller;
 import model.Promocao;
 import dao.PromocaoDAO;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
+import org.hibernate.validator.internal.util.logging.Log;
 
 @WebServlet(urlPatterns = "/promocao/*")
 public class PromocaoController extends HttpServlet {
@@ -49,7 +54,7 @@ public class PromocaoController extends HttpServlet {
                 case "promocaoatualizacao":
                     atualize(request, response);
                     break;
-                case "promocaporteatro":
+                case "promocaoporteatro":
                     filterTeatro(request, response);
                     break;
                 case "promocaoporsite":
@@ -126,11 +131,15 @@ public class PromocaoController extends HttpServlet {
 
     private void filterTeatro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         
         String CNPJ = request.getParameter("CNPJ");
+        System.out.println(CNPJ);
         List<Promocao> listaPromocoes = dao.getByTeatro(CNPJ);
         request.setAttribute("listaPromocoes", listaPromocoes);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
+        
+        
     }
 
     private void filterSite(HttpServletRequest request, HttpServletResponse response)
@@ -141,8 +150,4 @@ public class PromocaoController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> abd6706cc3ba4d81fd3bb6e06df8eefb64882c7f

@@ -49,6 +49,8 @@ public class TeatroController extends HttpServlet {
                 case "teatroatualizacao":
                     atualize(request, response);
                     break;
+                case "teatroporcidade":
+                    filterCidade(request,response);
                 default:
                     lista(request, response);
                     break;

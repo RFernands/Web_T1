@@ -32,7 +32,11 @@
             </tr>
             <c:forEach var="teatro" items="${requestScope.listaTeatros}">
                 <tr>
-                    <td><c:out value="${teatro.nome}" /></td>
+                
+                    <td>
+                    <a href="/SistemaWeb1/promocao/promocaoporteatro?CNPJ=<c:out value='${teatro.CNPJ}' />"
+                    onclick>
+                    <c:out value="${teatro.nome}" />  </a></td>
                     <td><c:out value="${teatro.cidade}" /></td>
                     <td><c:out value="${teatro.CNPJ}" /></td>
                     <td><a href="teatroedicao?CNPJ=<c:out value='${teatro.CNPJ}' />">Edição</a>
