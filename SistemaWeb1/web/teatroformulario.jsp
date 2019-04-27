@@ -7,18 +7,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html> 
     <head>
-        <title>Formulario </title> 
+        <title>Teatros </title> 
     </head>
     <body>
     <center>
-        <h1>Forulario</h1>
+        <h1>Teatros</h1>
         <h2>
-            <a href="inicial">Pagina Inicial</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="adminlogin">Área de Administrador</a>
+            <a href="teatrocadastro">Cadastrar Teatros</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
-            <a href="listacidades">Buscar por Cidade</a>
         </h2>    </center>    <div align="center">
             <c:if test="${teatro != null}"> 
                 <form action="teatroatualizacao" method="post"> 

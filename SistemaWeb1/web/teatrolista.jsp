@@ -15,13 +15,10 @@
     <center>
         <h1>Teatros</h1>
         <h2>
-            <a href="teatrocadastro">Pagina Inicial</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="sitecadastro">Área de Administrador</a>
+            <a href="teatrocadastro">Cadastrar Teatros</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="listacidades">Buscar por Cidade</a>
 
         </h2>
     </center>
@@ -38,6 +35,12 @@
                     <td><c:out value="${teatro.nome}" /></td>
                     <td><c:out value="${teatro.cidade}" /></td>
                     <td><c:out value="${teatro.CNPJ}" /></td>
+                    <td><a href="teatroedicao?CNPJ=<c:out value='${teatro.CNPJ}' />">Edição</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="teatroremocao?CNPJ=<c:out value='${teatro.CNPJ}' />"
+                    onclick="return confirm('Tem certeza de que deseja excluir este item?');">
+                    Remoção
+                </a></td>
                 </tr>
             </c:forEach>
         </table>

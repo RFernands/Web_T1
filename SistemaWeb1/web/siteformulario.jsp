@@ -13,11 +13,11 @@
     <center>
         <h1>Sites de Venda de Ingressos</h1>
         <h2>
-            <a href="inicial">Pagina Inicial</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="adminlogin">Área de Administrador</a>
+            <a href="sitecadastro">Cadastrar Site de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="criarpromocoes">Criar Promoções</a>
+            
         </h2>    </center>    <div align="center">
             <c:if test="${site != null}"> 
                 <form action="siteatualizacao" method="post"> 
@@ -29,7 +29,7 @@
                                 <caption>
                                     <h2> 
                                         <c:if test="${site != null}">
-                                            Edi aã oç
+                                            Edição
                                         </c:if>
                                             <c:if test="${site == null}">
                                                 Cadastro
@@ -37,7 +37,7 @@
                                     </h2>
                                 </caption>
                                 <c:if test="${site != null}"> 
-                                    <input type="hidden" name="id" value="<c:out value='${site.id}' />" />
+                                    <input type="hidden" name="id" value="<c:out value='${livro.id}' />" />
                                 </c:if>
                                     <tr> 
                                         <th>Nome: </th>
