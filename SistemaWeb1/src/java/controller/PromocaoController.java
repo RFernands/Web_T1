@@ -55,9 +55,6 @@ public class PromocaoController extends HttpServlet {
                 case "promocaoporsite":
                     filterSite(request, response);
                     break;
-                case "index":
-                    index(request, response);
-                    break;
                 default:
                     lista(request, response);
                     break;
@@ -143,10 +140,5 @@ public class PromocaoController extends HttpServlet {
         request.setAttribute("listaPromocoes", listaPromocoes);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
-    }
-
-    private void index(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

@@ -49,9 +49,6 @@ public class TeatroController extends HttpServlet {
                 case "teatroatualizacao":
                     atualize(request, response);
                     break;
-                    case "index":
-                    index(request, response);
-                   break;
                 default:
                     lista(request, response);
                     break;
@@ -125,9 +122,5 @@ public class TeatroController extends HttpServlet {
         request.setAttribute("listaTeatros", listaTeatros);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/teatrolista.jsp");
         dispatcher.forward(request, response);
-    }
-    private void index(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }
