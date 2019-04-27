@@ -15,9 +15,9 @@
     <center>
         <h1>Sites</h1>
         <h2>
-            <a href="index">Página Principal</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="sitecadastro">Criar Site de Venda de Ingresso</a>
+            <a href="sitecadastro">Cadastrar Site de Venda de Ingresso</a>
             &nbsp;&nbsp;&nbsp;
 
         </h2>

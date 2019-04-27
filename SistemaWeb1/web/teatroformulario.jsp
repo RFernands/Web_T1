@@ -13,9 +13,9 @@
     <center>
         <h1>Teatros</h1>
         <h2>
-            <a href="index">Página Principal</a>
+            <a href="/SistemaWeb1/">Página Principal</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="teatrocadastro">Criar Teatro</a>
+            <a href="teatrocadastro">Cadastrar Teatros</a>
             &nbsp;&nbsp;&nbsp;
         </h2>    </center>    <div align="center">
             <c:if test="${teatro != null}"> 
