@@ -141,8 +141,4 @@ public class PromocaoController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> abd6706cc3ba4d81fd3bb6e06df8eefb64882c7f
