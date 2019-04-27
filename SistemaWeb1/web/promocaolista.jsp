@@ -39,8 +39,15 @@
                     <td><c:out value="${promocao.dataPeca}" /></td>
                     <td><c:out value="${promocao.horario}" /></td>
                     <td><c:out value="${promocao.precoPeca}" /></td>
-                    <td><c:out value="${promocao.URLdoSite}" /></td>
-                    <td><c:out value="${promocao.CNPJdoTeatro}" /></td>
+                    
+                    <td><a href="/SistemaWeb1/promocao/promocaoporsite?URL=<c:out value='${promocao.URLdoSite}' />"
+                    onclick>
+                    <c:out value="${promocao.URLdoSite}" /></a></td>
+                    
+                    <td><a href="/SistemaWeb1/promocao/promocaoporteatro?CNPJ=<c:out value='${promocao.CNPJdoTeatro}' />"
+                    onclick>
+                    <c:out value="${promocao.CNPJdoTeatro}" /></a></td>
+                    
                     <td><c:out value="${promocao.ID}" /></td>
                     <td><a href="promocaoedicao?ID=<c:out value='${promocao.ID}' />">Edição</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;

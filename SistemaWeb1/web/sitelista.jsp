@@ -30,6 +30,12 @@
                 <th>URL</th>
                 <th>Telefone</th>
             </tr>
+            
+            URL do Site: <select id="URLdoSite" name="URLdoSite">
+                         <c:forEach var="site" items="${listaSites}">   
+                            <option value="<c:out value="${site.URL}" />"><c:out value="${site.URL}"/></option>                            </c:forEach>
+                         </select>
+            
             <c:forEach var="site" items="${requestScope.listaSites}">
                 <tr>
                     <td><c:out value="${site.nome}" /></td>

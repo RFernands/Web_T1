@@ -30,13 +30,17 @@
                 <th>Cidade</th>
                 <th>CNPJ</th>
             </tr>
+            <br/>
             <c:forEach var="teatro" items="${requestScope.listaTeatros}">
                 <tr>
-                
                     <td><a href="/SistemaWeb1/promocao/promocaoporteatro?CNPJ=<c:out value='${teatro.CNPJ}' />"
                     onclick>
                     <c:out value="${teatro.nome}" />  </a></td>
-                    <td><c:out value="${teatro.cidade}" /></td>
+                    
+                    
+                    <td><a href="/SistemaWeb1/teatro/teatroporcidade?cidade=<c:out value='${teatro.cidade}' />"
+                    onclick>
+                    <c:out value="${teatro.cidade}" /></a></td>
                     <td><c:out value="${teatro.CNPJ}" /></td>
                     <td><a href="teatroedicao?CNPJ=<c:out value='${teatro.CNPJ}' />">Edição</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;

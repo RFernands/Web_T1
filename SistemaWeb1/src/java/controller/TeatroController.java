@@ -125,4 +125,11 @@ public class TeatroController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/teatrolista.jsp");
         dispatcher.forward(request, response);
     }
+    
+    private void todosTeatros(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+    
+    
+    }
 }

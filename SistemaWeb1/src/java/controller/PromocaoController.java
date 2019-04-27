@@ -2,8 +2,11 @@ package controller;
 
 import model.Promocao;
 import dao.PromocaoDAO;
+import dao.SiteDAO;
+import dao.TeatroDAO;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -14,12 +17,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
+import model.Site;
+import model.Teatro;
 import org.hibernate.validator.internal.util.logging.Log;
 
 @WebServlet(urlPatterns = "/promocao/*")
 public class PromocaoController extends HttpServlet {
 
     private PromocaoDAO dao;
+    private SiteDAO siteDAO;
+    private TeatroDAO teatroDAO;
 
     @Override
     public void init() {
@@ -78,7 +85,7 @@ public class PromocaoController extends HttpServlet {
     }
 
     private void apresentaFormCadastro(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {        
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaoformulario.jsp");
         dispatcher.forward(request, response);
     }
@@ -104,6 +111,8 @@ public class PromocaoController extends HttpServlet {
         Promocao promocao = new Promocao(URLdoSite, CNPJdoTeatro, nomePeca, precoPeca, dataPeca, horario);
         dao.insert(promocao);
         response.sendRedirect("lista");
+        
+        
     }
 
     private void atualize(HttpServletRequest request, HttpServletResponse response)
@@ -150,4 +159,17 @@ public class PromocaoController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/promocaolista.jsp");
         dispatcher.forward(request, response);
     }
+    
+    private List<Site> todosSites(){
+        List<Site> listaSites = new ArrayList<>();
+        listaSites = siteDAO.getAll();
+        return listaSites;
+    }
+    
+    private List<Teatro> todosTeatros(){
+        List<Teatro> listaTeatros = new ArrayList<>();
+        listaTeatros = teatroDAO.getAll();
+        return listaTeatros;
+    }
+    
 }

@@ -63,6 +63,7 @@
                                     <tr>
                                         <th>Preço: </th> 
                                         <td>
+                                            
                                             <input type="text" name="precoPeca" size="45" required
                                                    value="<c:out value='${promocao.precoPeca}' />"
                                                    /> 
@@ -71,9 +72,14 @@
                                     <tr>
                                         <th>URL: </th> 
                                         <td>
-                                            <input type="text" name="URLdoSite" size="45" required
-                                                   value="<c:out value='${promocao.URLdoSite}' />"
-                                                   /> 
+                                            
+                                            <select id="URLdoSite" name="URLdoSite">
+                                            <c:forEach var="site" items="${requestScope.listaSites}">   
+                                            <option value="<c:out value="${site.URL}" />"><c:out value="${site.URL}"/></option>                            </c:forEach>
+                                            </select>
+                                            
+                                            
+                                            
                                         </td>
                                     </tr>
                                     <tr>
