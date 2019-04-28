@@ -2,11 +2,15 @@ Trabalho 1 de WEB
 
 Integrantes: Rebecca Fernands e Natasha Graifman
 
-SGBD utilizado, nome do banco, usuário e senha de acesso ///
-SGDB: JavaDB  ///
-Nome do banco: cadastro ///
-Usuário: root   ///
-Senha: root   ///
+SGBD utilizado, nome do banco, usuário e senha de acesso 
+
+SGDB: JavaDB  
+
+Nome do banco: cadastro
+
+Usuário: root 
+
+Senha: root   
 
 Como criar as tabelas? Existe algum script de criação da tabelas? Onde está localizado?
 
