@@ -36,10 +36,7 @@
                     <th><f:message key="telefone"/></th>
                 </tr>
 
-                <f:message key="url.site"/>: <select id="URLdoSite" name="URLdoSite">
-                    <c:forEach var="site" items="${listaSites}">   
-                        <option value="<c:out value="${site.URL}" />"><c:out value="${site.URL}"/></option>                            </c:forEach>
-                    </select>
+               
 
                 <c:forEach var="site" items="${requestScope.listaSites}">
                     <tr>
