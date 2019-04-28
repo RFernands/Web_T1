@@ -5,17 +5,19 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
+<f:bundle basename="i18n.mensagens">
 <html> 
     <head>
-        <title>Teatros </title> 
+        <title><f:message key="teatros"/> </title> 
     </head>
     <body>
     <center>
-        <h1>Teatros</h1>
+        <h1><f:message key="teatros"/></h1>
         <h2>
-            <a href="/SistemaWeb1/">Página Principal</a>
+            <a href="/SistemaWeb1/"><f:message key="pagina.principal"/></a>
             &nbsp;&nbsp;&nbsp;
-            <a href="teatrocadastro">Cadastrar Teatros</a>
+            <a href="teatrocadastro"><f:message key="cadastrar.teatro"/></a>
             &nbsp;&nbsp;&nbsp;
         </h2>    </center>    <div align="center">
             <c:if test="${teatro != null}"> 
@@ -28,10 +30,10 @@
                                 <caption>
                                     <h2> 
                                         <c:if test="${teatro != null}">
-                                            Edi aã oç
+                                            <f:message key="edicao"/>
                                         </c:if>
                                             <c:if test="${teatro == null}">
-                                                Cadastro
+                                                <f:message key="cadastro"/>
                                             </c:if>
                                     </h2>
                                 </caption>
@@ -39,28 +41,28 @@
                                     <input type="hidden" name="id" value="<c:out value='${livro.id}' />" />
                                 </c:if>
                                     <tr> 
-                                        <th>Nome: </th>
+                                        <th><f:message key="nome"/>: </th>
                                         <td>
                                             <input type="text" name="nome" size="45" required
                                                    value="<c:out value='${teatro.nome}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Cidade: </th>
+                                        <th><f:message key="cidade"/>: </th>
                                         <td>
                                             <input type="text" name="cidade" size="45" required
                                                    value="<c:out value='${teatro.cidade}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>CNPJ: </th>
+                                        <th><f:message key="cnpj"/>: </th>
                                         <td>
                                             <input type="text" name="cnpj" size="5" required
                                                    value="<c:out value='${teatro.CNPJ}' />"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>email: </th> 
+                                        <th><f:message key="email"/>: </th> 
                                         <td>
                                             <input type="text" name="email" size="45" required
                                                    value="<c:out value='${teatro.email}' />"
@@ -68,7 +70,7 @@
                                         </td>
                                     </tr> 
                                     <tr>
-                                        <th>senha: </th> 
+                                        <th><f:message key="senha"/>: </th> 
                                         <td>
                                             <input type="text" name="senha" size="45" required
                                                    value="<c:out value='${teatro.senha}' />"
@@ -77,7 +79,7 @@
                                     </tr> 
                                     <tr> 
                                         <td colspan="2" align="center"> 
-                                            <input type="submit" value="Salva" />
+                                            <input type="submit" value="<f:message key="salvar"/>" />
                                         </td>
                                     </tr> 
                             </table>
@@ -85,3 +87,4 @@
         </div>
 </body>
 </html>
+</f:bundle>
