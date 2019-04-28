@@ -114,4 +114,10 @@ public class SiteController extends HttpServlet {
         dao.delete(site);
         response.sendRedirect("lista");
     }
+    
+    private void todosSites(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+    
+    
+    }
 }

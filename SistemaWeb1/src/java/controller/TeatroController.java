@@ -49,6 +49,8 @@ public class TeatroController extends HttpServlet {
                 case "teatroatualizacao":
                     atualize(request, response);
                     break;
+                case "teatroporcidade":
+                    filterCidade(request,response);
                 default:
                     lista(request, response);
                     break;
@@ -122,5 +124,12 @@ public class TeatroController extends HttpServlet {
         request.setAttribute("listaTeatros", listaTeatros);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/teatrolista.jsp");
         dispatcher.forward(request, response);
+    }
+    
+    private void todosTeatros(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+    
+    
     }
 }

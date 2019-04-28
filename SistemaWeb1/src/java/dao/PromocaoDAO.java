@@ -1,5 +1,9 @@
 package dao;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+import org.hibernate.validator.internal.util.logging.Log;
+import static java.rmi.server.LogStream.log;
 import model.Promocao;
 import java.sql.Connection;
 import java.sql.DriverManager;
