@@ -23,6 +23,9 @@
         </h2>
     </center>
     <div align="center">
+        <br/>
+        <h3>Clique no nome do teatro para ver todas as promoções desse teatro</h3>
+        
         <table border="1" cellpadding="5">
             <caption><h2>Lista de Teatros</h2></caption>
             <tr>

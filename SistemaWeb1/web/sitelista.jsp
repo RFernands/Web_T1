@@ -23,6 +23,9 @@
         </h2>
     </center>
     <div align="center">
+        <br/>
+        <h3>Clique na URL do site para ver todas as promoções desse site</h3>
+        
         <table border="1" cellpadding="5">
             <caption><h2>Lista de Sites de Venda de Ingresso</h2></caption>
             <tr>
@@ -30,12 +33,6 @@
                 <th>URL</th>
                 <th>Telefone</th>
             </tr>
-            
-            URL do Site: <select id="URLdoSite" name="URLdoSite">
-                         <c:forEach var="site" items="${listaSites}">   
-                            <option value="<c:out value="${site.URL}" />"><c:out value="${site.URL}"/></option>                            </c:forEach>
-                         </select>
-            
             <c:forEach var="site" items="${requestScope.listaSites}">
                 <tr>
                     <td><c:out value="${site.nome}" /></td>
